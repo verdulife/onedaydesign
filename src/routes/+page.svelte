@@ -1,111 +1,122 @@
 <script>
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
+	import { metadata as data } from '$lib/meta';
 
-	function lastSlider() {
-		goto('#slide_5');
-	}
+	import Meta from '$components/global/Meta.svelte';
 
 	function animate() {
 		const sections = document.querySelectorAll('section');
-		const timming = {
-			duration: 1000,
-			iterations: 1,
-			'animation-fill-mode': 'backwards'
-		};
+		const timming = { duration: 1000, delay: 200, fill: 'both' };
 
 		sections.forEach((section) => {
-			section.animate(
-				{
-					opacity: 0
-				},
-				timming
-			);
-
-			if (`#${section.id}` === location.hash) {
-				section.animate(
-					{
-						opacity: 1
-					},
-					timming
-				);
-			}
+			section.animate({ opacity: [0, 1] }, timming);
 		});
+	}
+
+	function saveContact() {
+		const contact = {
+			name: 'One Day Design',
+			phone: '687754345',
+			email: 'hola@onedaydesign.com'
+		};
+
+		const vcard =
+			'BEGIN:VCARD\nVERSION:4.0\nFN:' +
+			contact.name +
+			'\nTEL;TYPE=work,voice:' +
+			contact.phone +
+			'\nEMAIL:' +
+			contact.email +
+			'\nEND:VCARD';
+
+		const blob = new Blob([vcard], { type: 'text/vcard' });
+		const url = URL.createObjectURL(blob);
+
+		const parent = document.querySelector('#slide_4 div');
+		const link = document.createElement('a');
+		link.download = contact.name + '.vcf';
+		link.href = url;
+		link.textContent = 'GUARDAR CONTACTO';
+		link.role = 'button';
+		link.style.pointerEvents = 'all';
+
+		parent.appendChild(link);
 	}
 
 	onMount(() => {
 		animate();
-		setInterval(animate, 100);
+		saveContact();
 	});
 </script>
 
+<Meta {data} />
+
 <section id="slide_1" class="col fcenter full">
 	<article class="col wfull">
-		<h1>Somos <strong>One Day Design</strong> y nos dedicamos al diseño gráfico, web y video.</h1>
+		<h1 class="wfull">
+			Hola, bienvenido a <strong>one&nbsp;day design</strong>, un estudio de diseño.
+		</h1>
 
-		<div class="row acenter">
-			<a role="button" href="#slide_2">SIGUIENTE</a>
+		<div class="row acenter wfull">
+			<a role="button" href="#slide_2" on:click={animate}>SIGUIENTE</a>
 		</div>
 	</article>
 </section>
 
 <section id="slide_2" class="col fcenter full">
 	<article class="col wfull">
-		<h1>
-			Creemos que la <strong>calidad</strong> y la <strong>velocidad</strong> pueden ir de la mano.
-		</h1>
+		<h2 class="wfull">
+			<strong>Nuestros servicios</strong> son,
+			<br />
+			diseño gráfico, páginas web, redes sociales, fotografía y edición video.
+		</h2>
 
-		<div class="row acenter">
-			<a role="button" href="#slide_3">SIGUIENTE</a>
+		<div class="row acenter wfull">
+			<a role="button" href="#slide_3" on:click={animate}>SIGUIENTE</a>
 		</div>
 	</article>
 </section>
 
 <section id="slide_3" class="col fcenter full">
 	<article class="col wfull">
-		<h1>Puedes encontrar <strong>nuestros trabajos</strong> en instagram.</h1>
+		<h2 class="wfull">
+			Puedes encontrar algunos de <strong>nuestros trabajos</strong> en
+			<a href="https://www.instagram.com/onedaydesign" target="_blank" rel="no-referrer">
+				Instagram
+			</a>
+			y en
+			<a href="https://www.behance.com/onedaydesign" target="_blank" rel="no-referrer">
+				Behance
+			</a>.
+		</h2>
 
-		<div class="row acenter">
-			<a role="button" href="#slide_4">SIGUIENTE</a>
-			<a role="button" href="https://www.instagram.com/vdeverdu" target="_blank">VER TRABAJOS</a>
+		<div class="row acenter wfull">
+			<a role="button" href="#slide_4" on:click={animate}>SIGUIENTE</a>
 		</div>
 	</article>
 </section>
 
 <section id="slide_4" class="col fcenter full">
 	<article class="col wfull">
-		<h1>Contacta con nosotros enviandonos un <strong>whatsapp</strong>.</h1>
+		<h2 class="wfull">
+			Contacta con nosotros enviandonos un <strong>whatsapp</strong> al
+			<strong>687&nbsp;754&nbsp;345</strong>.
+		</h2>
 
-		<div class="row acenter">
-			<a role="button" href="https://wa.me/34687754345" target="_blank" on:click={lastSlider}
-				>ENVIAR WHATSAPP</a
-			>
-		</div>
-	</article>
-</section>
-
-<section id="slide_5" class="col fcenter full">
-	<article class="col wfull">
-		<h1>Gracias por haver llegado hasta aqui, hablamos pronto.</h1>
-
-		<div class="row acenter">
-			<a role="button" href="#slide_1">VOLVER AL INICIO</a>
+		<div class="row acenter wfull">
+			<a role="button" href="https://wa.me/34687754345" target="_blank">WHATSAPP</a>
 		</div>
 	</article>
 </section>
 
 <style lang="postcss">
 	section {
-		padding: 4em;
 		opacity: 0;
-
-		&:first-of-type {
-			opacity: 1;
-		}
+		padding: 2em;
 	}
 
 	article {
-		max-width: 800px;
+		max-width: 960px;
 		gap: 2em;
 
 		& div {
@@ -113,17 +124,24 @@
 		}
 	}
 
-	h1 > strong {
+	h1 > strong,
+	h2 > strong {
 		color: transparent;
 		-webkit-text-stroke: 1px var(--base);
+
+		@media (--light) {
+			-webkit-text-stroke: 1px var(--base-900);
+		}
 	}
 
-	h1::selection {
-		background-color: black;
+	a {
+		color: currentColor;
+		pointer-events: all;
 	}
 
 	a[role='button'] {
-		min-width: 200px;
+		width: 200px;
+		max-width: 40%;
 		pointer-events: all;
 	}
 

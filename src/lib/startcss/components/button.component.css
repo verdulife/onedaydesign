@@ -16,7 +16,6 @@
 	background-color: var(--info);
 	color: var(--base);
 	font-size: var(--font-xs);
-	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
 	border-radius: 1em;
@@ -25,7 +24,11 @@
 	transition: 150ms;
 	user-select: none;
 	-webkit-user-drag: none;
-	
+
+	@media (--light) {
+		color: var(--base) !important;
+	}
+
 	&.unset {
 		background-color: unset;
 		border-radius: unset;

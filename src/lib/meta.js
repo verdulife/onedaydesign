@@ -1,8 +1,8 @@
 export const metadata = {
-  title: "One Day Design™",
-  description: "Un pantalón práctico de carácter minimalista, ideal para aquellas personas que aprecian sentirse cómodos y que les gusta moverse sin limitaciones.",
-  keywords: "pantalón, movimiento, libertad, calidad, comodidad, yoga, artes marciales, tecnologia, ecológico",
-  url: "https://www.simplementewear.com/",
-  image: "https://www.simplementewear.com/mobile.png",
-  card_image: "https://www.simplementewear.com/card.png"
+  title: "one day design™ | Estudio de diseño",
+  description: "Nuestros servicios son diseño gráfico, páginas web, redes sociales, fotografía y edición video.",
+  keywords: "diseño gráfico, páginas web, redes sociales, fotografía, edición video",
+  url: "/",
+  image: "/mobile.png",
+  card_image: "/card.png"
 };
