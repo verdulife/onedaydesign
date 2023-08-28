@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'TWK Everett';
+	src: url('twk-everett-regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'TWK Everett';
+	src: url('twk-everett-bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
