@@ -1,6 +1,13 @@
 <script>
 	import '$lib/startcss/startcss.css';
 	import Logo from '$components/Logo.svelte';
+	import { Lang } from '$lib/stores';
+	import { beforeUpdate } from 'svelte';
+
+	beforeUpdate(() => {
+		if (navigator.language.includes('es')) $Lang = 'es';
+		if (navigator.language.includes('ca')) $Lang = 'ca';
+	});
 </script>
 
 <header>

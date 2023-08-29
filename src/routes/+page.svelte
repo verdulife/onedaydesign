@@ -1,19 +1,25 @@
 <script>
 	import { onMount } from 'svelte';
 	import { metadata as data } from '$lib/meta';
+	import { Lang } from '$lib/stores';
+	import { lang } from '$lib/lang';
 
 	import Meta from '$components/global/Meta.svelte';
+	import Whatsapp from '../lib/icons/Whatsapp.svelte';
+	import Email from '../lib/icons/Email.svelte';
+
+	const ui = lang[$Lang];
 
 	function animate() {
 		const sections = document.querySelectorAll('section');
-		const timming = { duration: 1000, delay: 200, fill: 'both' };
+		const timming = { duration: 1000, delay: 250, fill: 'both' };
 
 		sections.forEach((section) => {
 			section.animate({ opacity: [0, 1] }, timming);
 		});
 	}
 
-	function saveContact() {
+	/* function saveContact() {
 		const contact = {
 			name: 'One Day Design',
 			phone: '687754345',
@@ -41,73 +47,90 @@
 		link.style.pointerEvents = 'all';
 
 		parent.appendChild(link);
-	}
+	} */
 
 	onMount(() => {
 		animate();
-		saveContact();
+		/* saveContact(); */
 	});
 </script>
 
 <Meta {data} />
 
-<section id="slide_1" class="col fcenter full">
-	<article class="col wfull">
-		<h1 class="wfull">
-			Hola, bienvenido a <strong>one&nbsp;day design</strong>, un estudio de diseño.
-		</h1>
+{#if ui}
+	<section id="presentacion" class="col fcenter full">
+		<article class="col wfull">
+			<h1 class="wfull">
+				{ui.presentation.line1}
+				<br />
+				<strong>{ui.presentation.line2}</strong>{ui.presentation.line3}
+			</h1>
 
-		<div class="row acenter wfull">
-			<a role="button" href="#slide_2" on:click={animate}>SIGUIENTE</a>
-		</div>
-	</article>
-</section>
+			<div class="row acenter wfull">
+				<a role="button" href="#servicios" on:click={animate}>{ui.buttons.next}</a>
+			</div>
+		</article>
+	</section>
 
-<section id="slide_2" class="col fcenter full">
-	<article class="col wfull">
-		<h2 class="wfull">
-			<strong>Nuestros servicios</strong> son,
-			<br />
-			diseño gráfico, páginas web, redes sociales, fotografía y edición video.
-		</h2>
+	<section id="servicios" class="col fcenter full">
+		<article class="col wfull">
+			<h2 class="wfull">
+				<strong>{ui.services.line1}</strong>
+				{ui.services.line2}
+			</h2>
 
-		<div class="row acenter wfull">
-			<a role="button" href="#slide_3" on:click={animate}>SIGUIENTE</a>
-		</div>
-	</article>
-</section>
+			<div class="row acenter wfull">
+				<a role="button" href="#proyetos" on:click={animate}>{ui.buttons.next}</a>
 
-<section id="slide_3" class="col fcenter full">
-	<article class="col wfull">
-		<h2 class="wfull">
-			Puedes encontrar algunos de <strong>nuestros trabajos</strong> en
-			<a href="https://www.instagram.com/onedaydesign" target="_blank" rel="no-referrer">
-				Instagram
-			</a>
-			y en
-			<a href="https://www.behance.com/onedaydesign" target="_blank" rel="no-referrer">
-				Behance
-			</a>.
-		</h2>
+				<a role="button" class="unset" href="#presentacion" on:click={animate}>
+					{ui.buttons.prev}
+				</a>
+			</div>
+		</article>
+	</section>
 
-		<div class="row acenter wfull">
-			<a role="button" href="#slide_4" on:click={animate}>SIGUIENTE</a>
-		</div>
-	</article>
-</section>
+	<section id="proyetos" class="col fcenter full">
+		<article class="col wfull">
+			<h2 class="wfull">
+				{ui.projects.line1} <strong>{ui.projects.line2}</strong>{ui.projects.line3}
+				<a href="https://www.instagram.com/onedaydesign" target="_blank" rel="no-referrer"
+					>{ui.projects.line4}</a
+				>.
+			</h2>
 
-<section id="slide_4" class="col fcenter full">
-	<article class="col wfull">
-		<h2 class="wfull">
-			Contacta con nosotros enviandonos un <strong>whatsapp</strong> al
-			<strong>687&nbsp;754&nbsp;345</strong>.
-		</h2>
+			<div class="row acenter wfull">
+				<a role="button" href="#contacto" on:click={animate}>{ui.buttons.next}</a>
 
-		<div class="row acenter wfull">
-			<a role="button" href="https://wa.me/34687754345" target="_blank">WHATSAPP</a>
-		</div>
-	</article>
-</section>
+				<a role="button" class="unset" href="#servicios" on:click={animate}>
+					{ui.buttons.prev}
+				</a>
+			</div>
+		</article>
+	</section>
+
+	<section id="contacto" class="col fcenter full">
+		<article class="col wfull">
+			<h2 class="wfull">
+				{ui.contact.line1} <strong>{ui.contact.line2}</strong>
+				{ui.contact.line3} <strong>{ui.contact.line4}</strong>.
+			</h2>
+
+			<div class="row wrap acenter wfull">
+				<a role="button" class="row acenter" href="https://wa.me/34687754345" target="_blank">
+					<Whatsapp /> 661 100 652
+				</a>
+
+				<a role="button" class="row acenter" href="mailto:hola@onedaydesign.com" target="_blank">
+					<Email /> hola@onedaydesign.com
+				</a>
+
+				<a role="button" class="unset" href="#proyetos" on:click={animate}>
+					{ui.buttons.prev}
+				</a>
+			</div>
+		</article>
+	</section>
+{/if}
 
 <style lang="postcss">
 	section {
@@ -120,7 +143,7 @@
 		gap: 2em;
 
 		& div {
-			gap: 1em;
+			gap: 2em;
 		}
 	}
 
@@ -140,17 +163,11 @@
 	}
 
 	a[role='button'] {
-		width: 200px;
-		max-width: 40%;
+		gap: 0.5em;
 		pointer-events: all;
-	}
 
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
+		&.unset {
+			opacity: 0.8;
 		}
 	}
 </style>
