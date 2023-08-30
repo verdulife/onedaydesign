@@ -16,9 +16,9 @@ export const lang = {
       line4: "Instagram"
     },
     contact: {
-      line1: "Contacta con nosotros escribiéndonos por",
+      line1: "Contacta con nosotros a través de",
       line2: "WhatsApp",
-      line3: "o envíanos un",
+      line3: "o",
       line4: "email"
     },
     buttons: {
@@ -44,9 +44,9 @@ export const lang = {
       line4: "Instagram"
     },
     contact: {
-      line1: "Contacta amb nosaltres escrivint-nos per",
+      line1: "Contacta amb nosaltres a través de",
       line2: "WhatsApp",
-      line3: "o envia'ns un",
+      line3: "o",
       line4: "email"
     },
     buttons: {
@@ -72,9 +72,9 @@ export const lang = {
       line4: "Instagram"
     },
     contact: {
-      line1: "Contact us by writing to our",
+      line1: "Contact us through",
       line2: "WhatsApp",
-      line3: "or sending us an",
+      line3: "or",
       line4: "email"
     },
     buttons: {

@@ -93,7 +93,7 @@
 		<article class="col wfull">
 			<h2 class="wfull">
 				{ui.projects.line1} <strong>{ui.projects.line2}</strong>{ui.projects.line3}
-				<a href="https://www.instagram.com/onedaydesign" target="_blank" rel="no-referrer"
+				<a href="https://www.instagram.com/onedaydesign.estudio" target="_blank" rel="no-referrer"
 					>{ui.projects.line4}</a
 				>.
 			</h2>
@@ -115,13 +115,23 @@
 				{ui.contact.line3} <strong>{ui.contact.line4}</strong>.
 			</h2>
 
-			<div class="row wrap acenter wfull">
-				<a role="button" class="row acenter" href="https://wa.me/34687754345" target="_blank">
+			<div class="row wrap jcenter@sm acenter wfull">
+				<a
+					role="button"
+					class="row fcenter wfull@sm"
+					href="https://wa.me/34687754345"
+					target="_blank"
+				>
 					<Whatsapp /> 661 100 652
 				</a>
 
-				<a role="button" class="row acenter" href="mailto:hola@onedaydesign.com" target="_blank">
-					<Email /> hola@onedaydesign.com
+				<a
+					role="button"
+					class="row fcenter wfull@sm"
+					href="mailto:onedaydesign.estudio@gmail.com"
+					target="_blank"
+				>
+					<Email /> onedaydesign.estudio@gmail.com
 				</a>
 
 				<a role="button" class="unset" href="#proyetos" on:click={animate}>
