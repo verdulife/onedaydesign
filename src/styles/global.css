@@ -177,7 +177,7 @@
   }
 
   .section--fullscreen {
-    min-height: 100svh;
+    height: 100svh;
     max-width: none;
     justify-content: stretch;
     gap: 4em;
