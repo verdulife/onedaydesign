@@ -4,8 +4,10 @@ import Section from '../../components/Section.astro';
 import IconWhatsapp from '../../components/IconWhatsapp.astro';
 import IconEmail from '../../components/IconEmail.astro';
 import { ui } from '../../i18n/ui';
+import { projects } from '../../data/projects';
 
 const t = ui.ca;
+const loop = [...projects, ...projects];
 ---
 
 <Base lang="ca">
@@ -38,22 +40,11 @@ const t = ui.ca;
     </div>
     <div class="projects-marquee">
       <div class="marquee-track" aria-hidden="true">
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
-        <div class="marquee-item"></div>
+        {loop.map((p) => (
+          <a class="marquee-item" href={p.url} target="_blank" rel="noopener" aria-label={p.title}>
+            <img src={p.image} alt="" loading="lazy" decoding="async" />
+          </a>
+        ))}
       </div>
     </div>
   </Section>
