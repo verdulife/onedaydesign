@@ -6,6 +6,7 @@ node_modules
 /.astro
 /dist
 /package
+/scripts
 .env
 .env.*
 !.env.example
