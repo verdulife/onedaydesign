@@ -42,7 +42,9 @@ export const ui = {
       next: '→ SIGUIENTE',
       prev: '← ANTERIOR',
       skip: 'Saltar al contenido',
-      sectionNav: 'Navegación entre secciones'
+      sectionNav: 'Navegación entre secciones',
+      viewProjects: 'Ver proyectos',
+      contact: 'Contacto'
     },
     notFound: {
       title: 'Página no encontrada',
@@ -82,7 +84,9 @@ export const ui = {
       next: '→ SEGÜENT',
       prev: '← ANTERIOR',
       skip: 'Saltar al contingut',
-      sectionNav: 'Navegació entre seccions'
+      sectionNav: 'Navegació entre seccions',
+      viewProjects: 'Veure projectes',
+      contact: 'Contacte'
     },
     notFound: {
       title: 'Pàgina no trobada',
@@ -122,7 +126,9 @@ export const ui = {
       next: '→ NEXT',
       prev: '← PREVIOUS',
       skip: 'Skip to content',
-      sectionNav: 'Section navigation'
+      sectionNav: 'Section navigation',
+      viewProjects: 'View projects',
+      contact: 'Contact'
     },
     notFound: {
       title: 'Page not found',

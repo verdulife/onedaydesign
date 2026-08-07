@@ -6,17 +6,17 @@ import IconEmail from '../../components/IconEmail.astro';
 import { ui } from '../../i18n/ui';
 
 const t = ui.ca;
-const order = ['presentacio', 'serveis', 'projectes', 'contacte'];
 ---
 
 <Base lang="ca">
   <Section
     id="presentacio"
-    index={0}
-    total={4}
     lang="ca"
-    order={order}
     variant="hero"
+    heroActions={[
+      { id: 'projectes', label: t.buttons.viewProjects },
+      { id: 'contacte', label: t.buttons.contact }
+    ]}
   >
     <h1>
       {t.presentation.line1}
@@ -26,14 +26,14 @@ const order = ['presentacio', 'serveis', 'projectes', 'contacte'];
     </h1>
   </Section>
 
-  <Section id="serveis" index={1} total={4} lang="ca" order={order}>
+  <Section id="serveis" lang="ca">
     <h2>
       <strong>{t.services.line1}</strong>
       {' '}{t.services.line2}
     </h2>
   </Section>
 
-  <Section id="projectes" index={2} total={4} lang="ca" order={order}>
+  <Section id="projectes" lang="ca">
     <h2>
       {t.projects.line1} <strong>{t.projects.line2}</strong>
       {t.projects.line3}{' '}
@@ -43,7 +43,7 @@ const order = ['presentacio', 'serveis', 'projectes', 'contacte'];
     </h2>
   </Section>
 
-  <Section id="contacte" index={3} total={4} lang="ca" order={order}>
+  <Section id="contacte" lang="ca">
     <h2>
       {t.contact.line1} <strong>{t.contact.line2}</strong>
       {' '}{t.contact.line3} <strong>{t.contact.line4}</strong>.

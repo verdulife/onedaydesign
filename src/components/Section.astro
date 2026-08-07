@@ -4,28 +4,26 @@ import { ui } from '../i18n/ui';
 
 export interface Props {
   id: string;
-  index: number;
-  total: number;
   lang: Lang;
-  order: string[];
   variant?: 'hero' | 'default';
+  heroActions?: { id: string; label: string }[];
 }
 
-const { id, index, total, lang, order, variant = 'default' } = Astro.props;
+const { id, lang, variant = 'default', heroActions } = Astro.props;
 const t = ui[lang];
-
-const nextId = index < total - 1 ? order[index + 1] : null;
 
 const sectionClass = ['section', variant === 'hero' && 'section--hero']
   .filter(Boolean)
   .join(' ');
 ---
 
-  <section id={id} class={sectionClass}>
-    <slot />
-    {variant === 'hero' && nextId && (
-      <nav class="section-actions" aria-label={t.buttons.sectionNav}>
-        <a href={`#${nextId}`}>{t.buttons.next}</a>
-      </nav>
-    )}
-  </section>
+<section id={id} class={sectionClass}>
+  <slot />
+  {variant === 'hero' && heroActions && heroActions.length > 0 && (
+    <nav class="section-actions" aria-label={t.buttons.sectionNav}>
+      {heroActions.map((action) => (
+        <a href={`#${action.id}`}>{action.label}</a>
+      ))}
+    </nav>
+  )}
+</section>
