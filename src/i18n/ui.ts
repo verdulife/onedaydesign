@@ -18,7 +18,7 @@ export const ui = {
     presentation: {
       line1: 'Bienvenido a',
       line2: 'one day design',
-      line3: 'tu estudio de desarrollo web.'
+      line3: 'tu estudio de diseño web.'
     },
     services: {
       line1: 'Hacemos',
@@ -67,7 +67,7 @@ export const ui = {
     presentation: {
       line1: 'Benvingut a',
       line2: 'one day design',
-      line3: 'el teu estudi de desenvolupament web.'
+      line3: 'el teu estudi de disseny web.'
     },
     services: {
       line1: 'Fem',
@@ -116,7 +116,7 @@ export const ui = {
     presentation: {
       line1: 'Welcome to',
       line2: 'one day design',
-      line3: 'your web development studio.'
+      line3: 'your web design studio.'
     },
     services: {
       line1: 'We',
