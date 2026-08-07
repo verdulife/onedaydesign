@@ -253,7 +253,7 @@
   .section-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 1em;
     margin-top: 1em;
   }
 
@@ -274,6 +274,18 @@
 
   .section-actions a:hover {
     background-color: color-mix(in oklab, var(--color-info) 75%, white);
+  }
+
+  .section-actions a.secondary {
+    background-color: transparent;
+    color: var(--color-fg);
+    border: 1px solid var(--color-fg);
+    box-shadow: none;
+  }
+
+  .section-actions a.secondary:hover {
+    background-color: var(--color-fg);
+    color: var(--color-bg);
   }
 
   .section-actions a.unset {
