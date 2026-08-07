@@ -1,10 +1,11 @@
 {
-  "background_color": "#333",
-  "theme_color": "#fff",
-  "name": "one day design™",
+  "name": "onedaydesign™",
   "short_name": "onedaydesign™",
+  "description": "Estudio de diseño. Diseño gráfico, desarrollo web, redes sociales, fotografía y edición de video.",
   "display": "standalone",
   "start_url": "/",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
   "icons": [
     {
       "src": "logo-192.png",
