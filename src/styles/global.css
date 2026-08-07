@@ -296,6 +296,7 @@
     max-width: 14.44ch;
     line-height: 1.05;
     letter-spacing: -0.03em;
+    overflow-wrap: break-word;
     margin: 0;
   }
 
