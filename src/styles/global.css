@@ -36,6 +36,7 @@
   html {
     background-color: var(--color-bg);
     color: var(--color-fg);
+    color-scheme: dark;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -65,6 +66,7 @@
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.02em;
+    text-wrap: balance;
   }
 
   ::selection {
