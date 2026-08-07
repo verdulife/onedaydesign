@@ -176,6 +176,11 @@
     padding: 5rem 2em 2em;
   }
 
+  .section--hero p {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    max-width: 36ch;
+  }
+
   .section:nth-child(1) {
     animation-delay: 0.05s;
   }
