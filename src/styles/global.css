@@ -249,6 +249,7 @@
     border-radius: 0.5em;
     overflow: hidden;
     text-decoration: none;
+    transition: transform 0.3s ease;
   }
 
   .marquee-item img {
@@ -256,10 +257,9 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
   }
 
-  .marquee-item:hover img {
+  .marquee-item:hover {
     transform: scale(1.05);
   }
 
