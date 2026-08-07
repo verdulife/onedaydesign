@@ -297,7 +297,7 @@
 
   .section h1 {
     font-size: var(--text-hero);
-    max-width: 14.44ch;
+    max-width: 15ch;
     line-height: 1.05;
     letter-spacing: -0.03em;
     margin: 0;
