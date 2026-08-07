@@ -194,6 +194,10 @@
     min-height: 30em;
   }
 
+  .boxed-note {
+    font-size: 1.125rem;
+  }
+
   .projects-title {
     flex: 0 0 35%;
     display: flex;

@@ -60,15 +60,6 @@ const t = ui.es;
 
   <Section id="contacto" lang="es" variant="boxed">
     <h2>
-      {t.social.line1} <strong>{t.social.line2}</strong>
-      {t.social.line3} {t.social.line4}
-    </h2>
-    <div class="section-actions">
-      <a href="https://www.cosmostudio.es/" rel="noopener">
-        {t.buttons.cosmo}
-      </a>
-    </div>
-    <h2>
       {t.contact.line1} <strong>{t.contact.line2}</strong>
       {t.contact.line3} <strong>{t.contact.line4}</strong>
       {t.contact.line5}
@@ -81,6 +72,15 @@ const t = ui.es;
       <a class="contact-link" href={`mailto:${t.contact.email}`}>
         <IconEmail />
         {t.contact.email}
+      </a>
+    </div>
+    <p class="boxed-note">
+      {t.social.line1} <strong>{t.social.line2}</strong>
+      {t.social.line3} {t.social.line4}
+    </p>
+    <div class="section-actions">
+      <a href="https://www.cosmostudio.es/" rel="noopener">
+        {t.buttons.cosmo}
       </a>
     </div>
   </Section>
