@@ -1,27 +1,36 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
 import { ui } from '../../i18n/ui';
 
 const t = ui.en;
+const order = ['presentation', 'services', 'projects', 'contact'];
 ---
 
 <Base lang="en">
-  <section id="presentation">
+  <Section
+    id="presentation"
+    index={0}
+    total={4}
+    lang="en"
+    order={order}
+    variant="hero"
+  >
     <h1>
       {t.presentation.line1}
       <br />
       <strong>{t.presentation.line2}</strong>
       {t.presentation.line3}
     </h1>
-  </section>
+  </Section>
 
-  <section id="services">
+  <Section id="services" index={1} total={4} lang="en" order={order}>
     <p>
-      {t.services.line1} {t.services.line2}
+      <strong>{t.services.line1}</strong> {t.services.line2}
     </p>
-  </section>
+  </Section>
 
-  <section id="projects">
+  <Section id="projects" index={2} total={4} lang="en" order={order}>
     <p>
       {t.projects.line1} <strong>{t.projects.line2}</strong>
       {t.projects.line3}{' '}
@@ -29,14 +38,14 @@ const t = ui.en;
         {t.projects.line4}
       </a>
     </p>
-  </section>
+  </Section>
 
-  <section id="contact">
+  <Section id="contact" index={3} total={4} lang="en" order={order}>
     <p>
       {t.contact.line1}{' '}
-      <a href="https://wa.me/34661100652" rel="noopener">{t.contact.line2}</a>{' '}
-      {t.contact.line3}{' '}
+      <a href="https://wa.me/34661100652" rel="noopener">{t.contact.line2}</a>
+      {' '}{t.contact.line3}{' '}
       <a href="mailto:onedaydesign.estudio@gmail.com">{t.contact.line4}</a>
     </p>
-  </section>
+  </Section>
 </Base>

@@ -1,1 +1,219 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-fg: #fdfdfc;
+  --color-muted: #8a8a8a;
+  --color-accent: #9d1722;
+
+  --font-sans: "twk-everett", ui-sans-serif, system-ui, sans-serif;
+
+  --text-hero: clamp(2.5rem, 8vw, 5.5rem);
+  --text-h1: clamp(2rem, 6vw, 4rem);
+  --text-body: clamp(1rem, 1.4vw, 1.25rem);
+  --text-small: 0.875rem;
+}
+
+@font-face {
+  font-family: "twk-everett";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/twk-everett-regular.woff2") format("woff2"),
+       url("/fonts/twk-everett-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "twk-everett";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/twk-everett-bold.woff2") format("woff2"),
+       url("/fonts/twk-everett-bold.woff") format("woff");
+}
+
+@layer base {
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-fg);
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-accent);
+    color: var(--color-fg);
+    z-index: 100;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--color-bg) 80%, transparent),
+      transparent
+    );
+    pointer-events: none;
+  }
+  .site-header > * {
+    pointer-events: auto;
+  }
+
+  .site-header img {
+    height: 1.5rem;
+    width: auto;
+  }
+
+  .lang-switcher {
+    display: flex;
+    gap: 0.75rem;
+    font-size: var(--text-small);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .lang-switcher a {
+    opacity: 0.55;
+  }
+
+  .lang-switcher a[aria-current="page"] {
+    opacity: 1;
+    color: var(--color-accent);
+  }
+
+  .lang-switcher a:hover {
+    opacity: 1;
+  }
+
+  main {
+    padding-top: 4rem;
+  }
+
+  .section {
+    scroll-snap-align: start;
+    min-height: calc(100dvh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 1.5rem 3rem;
+    box-sizing: border-box;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .section p {
+    font-size: var(--text-body);
+    line-height: 1.5;
+    max-width: 50ch;
+    margin: 0;
+  }
+
+  .section h1 {
+    font-size: var(--text-h1);
+    max-width: 24ch;
+    margin: 0;
+  }
+
+  .section--hero h1 {
+    font-size: var(--text-hero);
+  }
+
+  .section strong {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .section a:not(.section-actions a) {
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--color-fg) 40%, transparent);
+    text-underline-offset: 0.25em;
+  }
+
+  .section a:hover {
+    text-decoration-color: var(--color-accent);
+  }
+
+  .section-actions {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .section-actions a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-fg);
+    padding: 0.6rem 1.25rem;
+    border-radius: 9999px;
+    font-size: var(--text-small);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+  }
+
+  .section-actions a:hover {
+    background: var(--color-fg);
+    color: var(--color-bg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .section-actions a,
+    .skip-link {
+      transition: none;
+    }
+  }
+}

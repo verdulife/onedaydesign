@@ -46,7 +46,10 @@ const siteName = 'onedaydesign';
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : lang === 'ca' ? 'ca_ES' : 'en_US'} />
+    <meta
+      property="og:locale"
+      content={lang === 'es' ? 'es_ES' : lang === 'ca' ? 'ca_ES' : 'en_US'}
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={t.meta.title} />
     <meta name="twitter:description" content={t.meta.description} />
@@ -54,11 +57,12 @@ const siteName = 'onedaydesign';
     <meta name="theme-color" content="#0a0a0a" />
   </head>
   <body>
-    <header>
+    <a class="skip-link" href="#main">{t.buttons.skip}</a>
+    <header class="site-header">
       <a href={langPath[lang]} aria-label={siteName}>
-        <img src="/logo.svg" alt={siteName} width="80" height="40" />
+        <img src="/logo.svg" alt={siteName} />
       </a>
-      <nav aria-label="Idioma">
+      <nav class="lang-switcher" aria-label="Idioma">
         {hrefLang.map((l) => (
           <a
             href={langPath[l as Lang]}
@@ -70,7 +74,7 @@ const siteName = 'onedaydesign';
         ))}
       </nav>
     </header>
-    <main>
+    <main id="main">
       <slot />
     </main>
   </body>

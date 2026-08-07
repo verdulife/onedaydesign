@@ -38,7 +38,9 @@ export const ui = {
     },
     buttons: {
       next: '-> SIGUIENTE',
-      prev: '<- ANTERIOR'
+      prev: '<- ANTERIOR',
+      skip: 'Saltar al contenido',
+      sectionNav: 'Navegación entre secciones'
     }
   },
   ca: {
@@ -70,7 +72,9 @@ export const ui = {
     },
     buttons: {
       next: '-> SEGÜENT',
-      prev: '<- ANTERIOR'
+      prev: '<- ANTERIOR',
+      skip: 'Saltar al contingut',
+      sectionNav: 'Navegació entre seccions'
     }
   },
   en: {
@@ -102,7 +106,9 @@ export const ui = {
     },
     buttons: {
       next: '-> NEXT',
-      prev: '<- PREVIOUS'
+      prev: '<- PREVIOUS',
+      skip: 'Skip to content',
+      sectionNav: 'Section navigation'
     }
   }
 } as const;
