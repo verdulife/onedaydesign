@@ -176,11 +176,6 @@
     padding: 5rem 2em 2em;
   }
 
-  .section--hero p {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    max-width: 28ch;
-  }
-
   .section:nth-child(1) {
     animation-delay: 0.05s;
   }
@@ -210,6 +205,11 @@
     line-height: 1.6;
     max-width: 50ch;
     margin: 0;
+  }
+
+  .section--hero p {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    max-width: 32ch;
   }
 
   .section h1 {
