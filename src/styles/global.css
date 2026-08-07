@@ -42,7 +42,6 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
   }
 
   body {
@@ -148,13 +147,11 @@
   }
 
   .section {
-    scroll-snap-align: start;
-    min-height: calc(100dvh - 5rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 2em;
-    padding: 2em;
+    padding: 5em 2em;
     box-sizing: border-box;
     max-width: 60rem;
     margin: 0 auto;
