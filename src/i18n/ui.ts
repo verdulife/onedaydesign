@@ -33,7 +33,8 @@ export const ui = {
       line1: '¿Tu web ya la tienes pero tus',
       line2: 'redes sociales',
       line3: 'están abandonadas?',
-      line4: 'Tenemos lo que necesitas.'
+      line4: 'Tenemos lo que necesitas.',
+      visit: 'Visítanos en Cosmo Studio'
     },
     contact: {
       line1: 'Escríbenos por',
@@ -50,8 +51,7 @@ export const ui = {
       skip: 'Saltar al contenido',
       sectionNav: 'Navegación entre secciones',
       viewProjects: 'Ver proyectos',
-      contact: 'Contacto',
-      cosmo: 'Cosmo Studio'
+      contact: 'Contacto'
     },
     notFound: {
       title: 'Página no encontrada',
@@ -82,7 +82,8 @@ export const ui = {
       line1: 'Ja tens la web però les teves',
       line2: 'xarxes socials',
       line3: 'estan abandonades?',
-      line4: 'Tenim el que necessites.'
+      line4: 'Tenim el que necessites.',
+      visit: "Visita'ns a Cosmo Studio"
     },
     contact: {
       line1: 'Escriu-nos per',
@@ -99,8 +100,7 @@ export const ui = {
       skip: 'Saltar al contingut',
       sectionNav: 'Navegació entre seccions',
       viewProjects: 'Veure projectes',
-      contact: 'Contacte',
-      cosmo: 'Cosmo Studio'
+      contact: 'Contacte'
     },
     notFound: {
       title: 'Pàgina no trobada',
@@ -131,7 +131,8 @@ export const ui = {
       line1: 'Already have a website but your',
       line2: 'social media',
       line3: 'is abandoned?',
-      line4: "We've got what you need."
+      line4: "We've got what you need.",
+      visit: 'Visit us at Cosmo Studio'
     },
     contact: {
       line1: 'Write to us on',
@@ -148,8 +149,7 @@ export const ui = {
       skip: 'Skip to content',
       sectionNav: 'Section navigation',
       viewProjects: 'View projects',
-      contact: 'Contact',
-      cosmo: 'Cosmo Studio'
+      contact: 'Contact'
     },
     notFound: {
       title: 'Page not found',
