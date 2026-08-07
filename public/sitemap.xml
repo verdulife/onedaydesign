@@ -3,4 +3,10 @@
   <url>
     <loc>https://onedaydesign.vercel.app/</loc>
   </url>
+  <url>
+    <loc>https://onedaydesign.vercel.app/ca/</loc>
+  </url>
+  <url>
+    <loc>https://onedaydesign.vercel.app/en/</loc>
+  </url>
 </urlset>

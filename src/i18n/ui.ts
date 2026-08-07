@@ -41,6 +41,10 @@ export const ui = {
       prev: '<- ANTERIOR',
       skip: 'Saltar al contenido',
       sectionNav: 'Navegación entre secciones'
+    },
+    notFound: {
+      title: 'Página no encontrada',
+      back: 'Volver al inicio'
     }
   },
   ca: {
@@ -75,6 +79,10 @@ export const ui = {
       prev: '<- ANTERIOR',
       skip: 'Saltar al contingut',
       sectionNav: 'Navegació entre seccions'
+    },
+    notFound: {
+      title: 'Pàgina no trobada',
+      back: 'Tornar a inici'
     }
   },
   en: {
@@ -109,6 +117,10 @@ export const ui = {
       prev: '<- PREVIOUS',
       skip: 'Skip to content',
       sectionNav: 'Section navigation'
+    },
+    notFound: {
+      title: 'Page not found',
+      back: 'Back to home'
     }
   }
 } as const;

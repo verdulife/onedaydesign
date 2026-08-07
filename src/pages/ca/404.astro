@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import { ui } from '../../i18n/ui';
+
+const t = ui.ca;
+const order = ['no-trobat'];
+---
+
+<Base lang="ca">
+  <Section
+    id="no-trobat"
+    index={0}
+    total={1}
+    lang="ca"
+    order={order}
+    variant="hero"
+  >
+    <h1>
+      404
+      <br />
+      <strong>{t.notFound.title}</strong>
+    </h1>
+    <p>
+      <a href="/ca/">{t.notFound.back}</a>
+    </p>
+  </Section>
+</Base>

@@ -55,6 +55,30 @@ const siteName = 'onedaydesign';
     <meta name="twitter:description" content={t.meta.description} />
     <meta name="twitter:image" content={new URL('/card.jpg', base)} />
     <meta name="theme-color" content="#0a0a0a" />
+    <link
+      rel="preload"
+      href="/fonts/twk-everett-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        '@id': new URL('/#organization', base).href,
+        name: 'onedaydesign',
+        alternateName: 'onedaydesign™',
+        url: new URL('/', base).href,
+        logo: new URL('/logo.svg', base).href,
+        description: t.meta.description,
+        email: 'mailto:onedaydesign.estudio@gmail.com',
+        telephone: '+34 611 100 652',
+        sameAs: ['https://www.instagram.com/onedaydesign.estudio']
+      })}
+    />
   </head>
   <body>
     <a class="skip-link" href="#main">{t.buttons.skip}</a>
