@@ -9,7 +9,7 @@
 
   --font-sans: "twk-everett", ui-sans-serif, system-ui, sans-serif;
 
-  --text-hero: clamp(2.5rem, 12vw, 5rem);
+  --text-hero: clamp(3.5rem, 18vw, 8rem);
   --text-h1: clamp(1.875rem, 10vw, 3.75rem);
   --text-body: clamp(0.875rem, 3vw, 1.125rem);
   --text-small: clamp(0.75rem, 2vw, 0.875rem);
@@ -204,7 +204,9 @@
 
   .section h1 {
     font-size: var(--text-hero);
-    max-width: 24ch;
+    max-width: 20ch;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
     margin: 0;
   }
 
