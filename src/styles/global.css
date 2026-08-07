@@ -177,8 +177,8 @@
   }
 
   .section--hero p {
-    font-size: clamp(1.75rem, 5vw, 2.5rem);
-    max-width: 32ch;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    max-width: 28ch;
   }
 
   .section:nth-child(1) {
