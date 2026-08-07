@@ -1,12 +1,12 @@
 ---
-import Base from '../layouts/Base.astro';
-import { ui } from '../i18n/ui';
+import Base from '../../layouts/Base.astro';
+import { ui } from '../../i18n/ui';
 
-const t = ui.es;
+const t = ui.ca;
 ---
 
-<Base lang="es">
-  <section id="presentacion">
+<Base lang="ca">
+  <section id="presentacio">
     <h1>
       {t.presentation.line1}
       <br />
@@ -15,13 +15,13 @@ const t = ui.es;
     </h1>
   </section>
 
-  <section id="servicios">
+  <section id="serveis">
     <p>
       {t.services.line1} {t.services.line2}
     </p>
   </section>
 
-  <section id="proyectos">
+  <section id="projectes">
     <p>
       {t.projects.line1} <strong>{t.projects.line2}</strong>
       {t.projects.line3}{' '}
@@ -31,7 +31,7 @@ const t = ui.es;
     </p>
   </section>
 
-  <section id="contacto">
+  <section id="contacte">
     <p>
       {t.contact.line1}{' '}
       <a href="https://wa.me/34661100652" rel="noopener">{t.contact.line2}</a>{' '}
