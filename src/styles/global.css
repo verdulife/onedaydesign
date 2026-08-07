@@ -233,10 +233,12 @@
     display: block;
     height: 100%;
     aspect-ratio: 4 / 3;
+    border: 1px solid color-mix(in oklab, var(--color-fg) 12%, transparent);
     border-radius: 0.5em;
     overflow: hidden;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .marquee-item img {
@@ -248,6 +250,7 @@
 
   .marquee-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.5);
   }
 
   .marquee-item:focus-visible {
