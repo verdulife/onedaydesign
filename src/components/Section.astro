@@ -5,14 +5,18 @@ import { ui } from '../i18n/ui';
 export interface Props {
   id: string;
   lang: Lang;
-  variant?: 'hero' | 'default';
+  variant?: 'hero' | 'default' | 'fullscreen';
   heroActions?: { id: string; label: string; secondary?: boolean }[];
 }
 
 const { id, lang, variant = 'default', heroActions } = Astro.props;
 const t = ui[lang];
 
-const sectionClass = ['section', variant === 'hero' && 'section--hero']
+const sectionClass = [
+  'section',
+  variant === 'hero' && 'section--hero',
+  variant === 'fullscreen' && 'section--fullscreen'
+]
   .filter(Boolean)
   .join(' ');
 ---

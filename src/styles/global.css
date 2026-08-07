@@ -176,6 +176,74 @@
     padding: 5rem 2em 2em;
   }
 
+  .section--fullscreen {
+    min-height: 100svh;
+    justify-content: stretch;
+    gap: 0;
+    padding: 5rem 2em 2em;
+  }
+
+  .projects-title {
+    flex: 0 0 35%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .projects-title h2 {
+    max-width: 32ch;
+  }
+
+  .projects-marquee {
+    flex: 1 1 65%;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 5%,
+      black 95%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 5%,
+      black 95%,
+      transparent
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    height: 100%;
+    align-items: center;
+    animation: marquee-scroll 30s linear infinite;
+  }
+
+  .projects-marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-item {
+    flex: 0 0 auto;
+    width: 280px;
+    aspect-ratio: 4 / 3;
+    background: color-mix(in oklab, var(--color-fg) 8%, transparent);
+    border: 1px solid color-mix(in oklab, var(--color-fg) 15%, transparent);
+    border-radius: 0.5em;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   .section:nth-child(1) {
     animation-delay: 0.05s;
   }
@@ -321,6 +389,9 @@
     .section-actions a,
     .skip-link {
       transition: none;
+    }
+    .marquee-track {
+      animation: none;
     }
   }
 }
