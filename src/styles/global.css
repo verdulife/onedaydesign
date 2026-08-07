@@ -87,7 +87,7 @@
   }
 
   ::selection {
-    background: var(--color-accent);
+    background: var(--color-info);
     color: var(--color-fg);
   }
 }
@@ -146,7 +146,7 @@
 
   .lang-switcher a[aria-current="page"] {
     opacity: 1;
-    color: var(--color-accent);
+    color: var(--color-info);
   }
 
   .lang-switcher a:hover {
