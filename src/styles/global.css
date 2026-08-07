@@ -5,13 +5,14 @@
   --color-fg: #fdfdfc;
   --color-muted: #8a8a8a;
   --color-accent: #9d1722;
+  --color-info: hsl(224, 74%, 45%);
 
   --font-sans: "twk-everett", ui-sans-serif, system-ui, sans-serif;
 
-  --text-hero: clamp(2.5rem, 8vw, 5.5rem);
-  --text-h1: clamp(2rem, 6vw, 4rem);
-  --text-body: clamp(1rem, 1.4vw, 1.25rem);
-  --text-small: 0.875rem;
+  --text-hero: clamp(2.5rem, 12vw, 5rem);
+  --text-h1: clamp(1.875rem, 10vw, 3.75rem);
+  --text-body: clamp(0.875rem, 3vw, 1.125rem);
+  --text-small: clamp(0.75rem, 2vw, 0.875rem);
 }
 
 @font-face {
@@ -47,6 +48,12 @@
   body {
     margin: 0;
     min-height: 100dvh;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in oklab, var(--color-fg) 18%, transparent) 1px,
+      transparent 0
+    );
+    background-size: 40px 40px;
   }
 
   a {
@@ -63,9 +70,9 @@
   h1,
   h2,
   h3 {
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
 
@@ -98,7 +105,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
+    padding: 2em;
     background: linear-gradient(
       to bottom,
       color-mix(in oklab, var(--color-bg) 80%, transparent),
@@ -111,7 +118,7 @@
   }
 
   .site-header img {
-    height: 1.5rem;
+    height: 2.5rem;
     width: auto;
   }
 
@@ -137,44 +144,74 @@
   }
 
   main {
-    padding-top: 4rem;
+    padding-top: 5rem;
   }
 
   .section {
     scroll-snap-align: start;
-    min-height: calc(100dvh - 4rem);
+    min-height: calc(100dvh - 5rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem 1.5rem 3rem;
+    gap: 2em;
+    padding: 2em;
     box-sizing: border-box;
-    max-width: 80rem;
+    max-width: 60rem;
     margin: 0 auto;
+    opacity: 0;
+    animation: section-fade-in 0.7s ease-out both;
+  }
+
+  .section:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .section:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .section:nth-child(3) {
+    animation-delay: 0.35s;
+  }
+  .section:nth-child(4) {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes section-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   .section p {
     font-size: var(--text-body);
-    line-height: 1.5;
+    line-height: 1.6;
     max-width: 50ch;
     margin: 0;
   }
 
   .section h1 {
+    font-size: var(--text-hero);
+    max-width: 24ch;
+    margin: 0;
+  }
+
+  .section h2 {
     font-size: var(--text-h1);
     max-width: 24ch;
     margin: 0;
   }
 
-  .section--hero h1 {
-    font-size: var(--text-hero);
-  }
-
   .section strong {
-    color: var(--color-accent);
-    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-fg);
+    font-weight: inherit;
   }
 
-  .section a:not(.section-actions a) {
+  .section a:not(.section-actions a):not(.contact-link) {
     text-decoration: underline;
     text-decoration-color: color-mix(in oklab, var(--color-fg) 40%, transparent);
     text-underline-offset: 0.25em;
@@ -184,34 +221,69 @@
     text-decoration-color: var(--color-accent);
   }
 
-  .section-actions {
-    margin-top: 2.5rem;
+  .contact-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5em;
+    margin-top: 1em;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .section-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 1em;
   }
 
   .section-actions a {
     display: inline-flex;
     align-items: center;
-    border: 1px solid var(--color-fg);
-    padding: 0.6rem 1.25rem;
-    border-radius: 9999px;
+    background-color: var(--color-info);
+    color: var(--color-fg);
     font-size: var(--text-small);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    transition: background-color 0.2s ease, color 0.2s ease;
     text-decoration: none;
+    border-radius: 1em;
+    box-shadow: inset 0 1px 2px 0 rgb(255 255 255 / 0.2);
+    padding: 0.85em 1.75em;
+    transition: background-color 0.15s ease;
   }
 
   .section-actions a:hover {
-    background: var(--color-fg);
-    color: var(--color-bg);
+    background-color: color-mix(in oklab, var(--color-info) 75%, white);
+  }
+
+  .section-actions a.unset {
+    background-color: unset;
+    box-shadow: unset;
+    color: var(--color-fg);
+    border-radius: unset;
+    padding: 0;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--color-fg) 40%, transparent);
+    text-underline-offset: 4px;
+    opacity: 0.8;
+  }
+
+  .section-actions a.unset:hover {
+    background-color: unset;
+    text-decoration-color: var(--color-accent);
   }
 
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+    .section {
+      animation: none;
+      opacity: 1;
     }
     .section-actions a,
     .skip-link {

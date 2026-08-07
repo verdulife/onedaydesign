@@ -26,7 +26,7 @@ const sectionClass = ['section', variant === 'hero' && 'section--hero']
   <slot />
   {(prevId || nextId) && (
     <nav class="section-actions" aria-label={t.buttons.sectionNav}>
-      {prevId && <a href={`#${prevId}`}>{t.buttons.prev}</a>}
+      {prevId && <a href={`#${prevId}`} class="unset">{t.buttons.prev}</a>}
       {nextId && <a href={`#${nextId}`}>{t.buttons.next}</a>}
     </nav>
   )}

@@ -34,11 +34,13 @@ export const ui = {
       line1: 'Contacta con nosotros a través de',
       line2: 'WhatsApp',
       line3: 'o',
-      line4: 'email'
+      line4: 'email',
+      phone: '661 100 652',
+      email: 'onedaydesign.estudio@gmail.com'
     },
     buttons: {
-      next: '-> SIGUIENTE',
-      prev: '<- ANTERIOR',
+      next: '→ SIGUIENTE',
+      prev: '← ANTERIOR',
       skip: 'Saltar al contenido',
       sectionNav: 'Navegación entre secciones'
     },
@@ -72,11 +74,13 @@ export const ui = {
       line1: 'Contacta amb nosaltres a través de',
       line2: 'WhatsApp',
       line3: 'o',
-      line4: 'email'
+      line4: 'email',
+      phone: '661 100 652',
+      email: 'onedaydesign.estudio@gmail.com'
     },
     buttons: {
-      next: '-> SEGÜENT',
-      prev: '<- ANTERIOR',
+      next: '→ SEGÜENT',
+      prev: '← ANTERIOR',
       skip: 'Saltar al contingut',
       sectionNav: 'Navegació entre seccions'
     },
@@ -110,11 +114,13 @@ export const ui = {
       line1: 'Contact us via',
       line2: 'WhatsApp',
       line3: 'or',
-      line4: 'email'
+      line4: 'email',
+      phone: '661 100 652',
+      email: 'onedaydesign.estudio@gmail.com'
     },
     buttons: {
-      next: '-> NEXT',
-      prev: '<- PREVIOUS',
+      next: '→ NEXT',
+      prev: '← PREVIOUS',
       skip: 'Skip to content',
       sectionNav: 'Section navigation'
     },

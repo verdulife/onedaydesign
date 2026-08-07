@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Section from '../../components/Section.astro';
+import IconWhatsapp from '../../components/IconWhatsapp.astro';
+import IconEmail from '../../components/IconEmail.astro';
 import { ui } from '../../i18n/ui';
 
 const t = ui.ca;
@@ -25,27 +27,36 @@ const order = ['presentacio', 'serveis', 'projectes', 'contacte'];
   </Section>
 
   <Section id="serveis" index={1} total={4} lang="ca" order={order}>
-    <p>
-      <strong>{t.services.line1}</strong> {t.services.line2}
-    </p>
+    <h2>
+      <strong>{t.services.line1}</strong>
+      {t.services.line2}
+    </h2>
   </Section>
 
   <Section id="projectes" index={2} total={4} lang="ca" order={order}>
-    <p>
+    <h2>
       {t.projects.line1} <strong>{t.projects.line2}</strong>
       {t.projects.line3}{' '}
       <a href="https://www.instagram.com/onedaydesign.estudio" rel="noopener">
         {t.projects.line4}
       </a>
-    </p>
+    </h2>
   </Section>
 
   <Section id="contacte" index={3} total={4} lang="ca" order={order}>
-    <p>
-      {t.contact.line1}{' '}
-      <a href="https://wa.me/34661100652" rel="noopener">{t.contact.line2}</a>
-      {' '}{t.contact.line3}{' '}
-      <a href="mailto:onedaydesign.estudio@gmail.com">{t.contact.line4}</a>
-    </p>
+    <h2>
+      {t.contact.line1} <strong>{t.contact.line2}</strong>
+      {t.contact.line3} <strong>{t.contact.line4}</strong>.
+    </h2>
+    <div class="contact-links">
+      <a class="contact-link" href="https://wa.me/34661100652" rel="noopener">
+        <IconWhatsapp />
+        {t.contact.phone}
+      </a>
+      <a class="contact-link" href={`mailto:${t.contact.email}`}>
+        <IconEmail />
+        {t.contact.email}
+      </a>
+    </div>
   </Section>
 </Base>
