@@ -19,9 +19,8 @@ const t = ui.ca;
     ]}
   >
     <h1>
-      {t.presentation.line1}
+      {t.presentation.line1} <strong>{t.presentation.line2}</strong>
       <br />
-      <strong>{t.presentation.line2}</strong>
       {t.presentation.line3}
     </h1>
     <p>
@@ -33,17 +32,24 @@ const t = ui.ca;
   <Section id="projectes" lang="ca">
     <h2>
       {t.projects.line1} <strong>{t.projects.line2}</strong>
-      {t.projects.line3}{' '}
-      <a href="https://www.instagram.com/onedaydesign.estudio" rel="noopener">
-        {t.projects.line4}
-      </a>
+      {t.projects.line3}
     </h2>
   </Section>
 
   <Section id="contacte" lang="ca" variant="boxed">
     <h2>
+      {t.social.line1} <strong>{t.social.line2}</strong>
+      {t.social.line3} {t.social.line4}
+    </h2>
+    <div class="section-actions">
+      <a href="https://www.cosmostudio.es/" rel="noopener">
+        {t.buttons.cosmo}
+      </a>
+    </div>
+    <h2>
       {t.contact.line1} <strong>{t.contact.line2}</strong>
-      {' '}{t.contact.line3} <strong>{t.contact.line4}</strong>.
+      {t.contact.line3} <strong>{t.contact.line4}</strong>
+      {t.contact.line5}
     </h2>
     <div class="contact-links">
       <a class="contact-link" href="https://wa.me/34661100652" rel="noopener">
