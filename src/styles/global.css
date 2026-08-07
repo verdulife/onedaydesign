@@ -178,6 +178,7 @@
 
   .section--fullscreen {
     min-height: 100svh;
+    max-width: none;
     justify-content: stretch;
     gap: 0;
     padding: 5rem 2em 2em;
@@ -215,7 +216,7 @@
 
   .marquee-track {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem;
     width: max-content;
     height: 100%;
     align-items: center;
