@@ -234,7 +234,7 @@
     width: max-content;
     height: 100%;
     align-items: center;
-    animation: marquee-scroll 60s linear infinite;
+    animation: marquee-scroll 80s linear infinite;
   }
 
   .projects-marquee:hover .marquee-track {
