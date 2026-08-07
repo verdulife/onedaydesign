@@ -3,6 +3,8 @@ node_modules
 .agents/skills/tailwind-4-docs/references/docs/
 /build
 /.svelte-kit
+/.astro
+/dist
 /package
 .env
 .env.*
