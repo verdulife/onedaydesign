@@ -14,7 +14,6 @@ export interface Props {
 const { id, index, total, lang, order, variant = 'default' } = Astro.props;
 const t = ui[lang];
 
-const prevId = index > 0 ? order[index - 1] : null;
 const nextId = index < total - 1 ? order[index + 1] : null;
 
 const sectionClass = ['section', variant === 'hero' && 'section--hero']
@@ -22,12 +21,11 @@ const sectionClass = ['section', variant === 'hero' && 'section--hero']
   .join(' ');
 ---
 
-<section id={id} class={sectionClass}>
-  <slot />
-  {(prevId || nextId) && (
-    <nav class="section-actions" aria-label={t.buttons.sectionNav}>
-      {prevId && <a href={`#${prevId}`} class="unset">{t.buttons.prev}</a>}
-      {nextId && <a href={`#${nextId}`}>{t.buttons.next}</a>}
-    </nav>
-  )}
-</section>
+  <section id={id} class={sectionClass}>
+    <slot />
+    {variant === 'hero' && nextId && (
+      <nav class="section-actions" aria-label={t.buttons.sectionNav}>
+        <a href={`#${nextId}`}>{t.buttons.next}</a>
+      </nav>
+    )}
+  </section>

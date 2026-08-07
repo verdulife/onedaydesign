@@ -53,6 +53,7 @@
       transparent 0
     );
     background-size: 40px 40px;
+    background-attachment: fixed;
   }
 
   a {
@@ -148,6 +149,7 @@
       radial-gradient(circle at top left, #00ffff30, transparent),
       radial-gradient(circle at top right, #ff00ff20, transparent),
       radial-gradient(circle at bottom, #ffff0020, transparent);
+    background-attachment: fixed;
   }
 
   .section {
