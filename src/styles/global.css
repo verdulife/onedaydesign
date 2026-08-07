@@ -236,6 +236,22 @@
     border-radius: 0.5em;
   }
 
+  .marquee-item:nth-child(4n + 1) {
+    aspect-ratio: 4 / 2.4;
+  }
+
+  .marquee-item:nth-child(4n + 2) {
+    aspect-ratio: 4 / 3.2;
+  }
+
+  .marquee-item:nth-child(4n + 3) {
+    aspect-ratio: 4 / 4;
+  }
+
+  .marquee-item:nth-child(4n) {
+    aspect-ratio: 4 / 2.8;
+  }
+
   @keyframes marquee-scroll {
     from {
       transform: translateX(0);
