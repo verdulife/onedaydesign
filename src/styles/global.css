@@ -180,7 +180,7 @@
     min-height: 100svh;
     max-width: none;
     justify-content: stretch;
-    gap: 2em;
+    gap: 4em;
     padding: 5rem 2em 2em;
   }
 
