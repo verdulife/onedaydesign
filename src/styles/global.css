@@ -143,7 +143,11 @@
   }
 
   main {
-    padding-top: 5rem;
+    padding-top: 0;
+    background:
+      radial-gradient(circle at top left, #00ffff30, transparent),
+      radial-gradient(circle at top right, #ff00ff20, transparent),
+      radial-gradient(circle at bottom, #ffff0020, transparent);
   }
 
   .section {
@@ -157,6 +161,12 @@
     margin: 0 auto;
     opacity: 0;
     animation: section-fade-in 0.7s ease-out both;
+  }
+
+  .section--hero {
+    min-height: 100svh;
+    max-width: none;
+    padding: 5rem 2em 2em;
   }
 
   .section:nth-child(1) {
