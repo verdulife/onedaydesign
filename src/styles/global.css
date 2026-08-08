@@ -420,7 +420,7 @@
 
     .section--fullscreen {
       padding: 1.5em 0 1.5em;
-      gap: 0;
+      gap: 1em;
     }
 
     .section--boxed {
