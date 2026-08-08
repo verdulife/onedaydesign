@@ -461,6 +461,10 @@
       font-size: clamp(2.5rem, 13vw, 4rem);
     }
 
+    .section h2 {
+      font-size: clamp(1.25rem, 8vw, 2rem);
+    }
+
     .section--hero p {
       font-size: 1.125rem;
     }
