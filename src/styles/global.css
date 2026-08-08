@@ -438,6 +438,15 @@
       padding-left: 1.5em;
     }
 
+    .marquee-item {
+      width: 68vw;
+      height: auto;
+    }
+
+    .marquee-track {
+      gap: 1.5rem;
+    }
+
     .section h1 {
       font-size: clamp(2.5rem, 13vw, 4rem);
     }
