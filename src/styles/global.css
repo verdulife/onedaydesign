@@ -154,7 +154,6 @@
 
   main {
     padding-top: 0;
-    padding-bottom: 8em;
   }
 
   .section {
@@ -191,7 +190,7 @@
     background: var(--color-bg);
     border: 1px solid color-mix(in oklab, var(--color-fg) 15%, transparent);
     border-radius: 1em;
-    padding: 3em 6rem 0;
+    padding: 3em 6rem 6em;
     min-height: 30em;
   }
 
@@ -425,14 +424,14 @@
 
     .section--boxed {
       margin-top: 4em;
-      padding: 2em 1.5em 0;
+      padding: 2em 1.5em 3em;
       min-height: 0;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
 
     main {
-      padding-bottom: 3em;
+      padding-bottom: 0;
     }
 
     .projects-title {
