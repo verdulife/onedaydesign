@@ -462,7 +462,7 @@
     }
 
     .section h2 {
-      font-size: clamp(1.25rem, 8vw, 2rem);
+      font-size: clamp(1.125rem, 7vw, 1.75rem);
     }
 
     .section--hero p {
