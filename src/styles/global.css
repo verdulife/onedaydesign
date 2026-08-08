@@ -46,7 +46,6 @@
 
   body {
     margin: 0;
-    padding: 3rem;
     min-height: 100dvh;
     background:
       radial-gradient(circle at top left, #00ffff30, transparent),
@@ -162,7 +161,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 2em;
-    padding: 5em 2em;
+    padding: 5em 3rem;
     box-sizing: border-box;
     max-width: 60rem;
     margin: 0 auto;
@@ -173,7 +172,7 @@
   .section--hero {
     min-height: 100svh;
     max-width: none;
-    padding: 5rem 2em 2em;
+    padding: 5rem 3rem 2em;
   }
 
   .section--fullscreen {
@@ -181,7 +180,7 @@
     max-width: none;
     justify-content: stretch;
     gap: 4em;
-    padding: 5rem 2em 2em;
+    padding: 5rem 0 2em;
   }
 
   .section--boxed {
@@ -190,7 +189,7 @@
     background: var(--color-bg);
     border: 1px solid color-mix(in oklab, var(--color-fg) 15%, transparent);
     border-radius: 1em;
-    padding: 3em 4em;
+    padding: 3em 3rem;
     min-height: 30em;
   }
 
